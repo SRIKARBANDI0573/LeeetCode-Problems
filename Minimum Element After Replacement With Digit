@@ -1,0 +1,19 @@
+int minElement(int* nums, int numsSize) {
+    int s[numsSize];
+    int r;
+    for(int i=0;i<numsSize;i++){
+        s[i]=0;
+        while(nums[i]>0){
+            r=nums[i]%10;
+            s[i]=s[i]+r;
+            nums[i]=nums[i]/10;
+        }
+    }
+    int m=s[0];
+    for(int i=0;i<numsSize;i++){
+        if(s[i]<m){
+            m=s[i];
+        }
+    }
+return m;
+}
