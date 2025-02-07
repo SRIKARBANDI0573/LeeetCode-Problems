@@ -1,0 +1,22 @@
+  class Solution {
+    public int smallestNumber(int n, int t) {
+        int i=n;
+        int r;
+        int d=0,c;
+        while(i>=n){
+            int g=i;
+            r=1;
+            while(g>0){
+            c=g%10;
+            r=r*c;
+            g=g/10;
+            }
+            if(r%t==0){
+                d=i;
+             break;
+            }
+            i=i+1;
+        }
+        return d;
+ }
+}
