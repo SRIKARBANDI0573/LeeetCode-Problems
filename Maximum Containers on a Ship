@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int maxContainers(int n, int w, int maxWeight) {
+     int k=n*n;
+        int c=1;
+        int d=w;
+        int m=0;
+        while(c<=k){
+            if(d<=maxWeight){
+                m++;
+            }
+            d=d+w;
+            c++;
+        }
+        return m;
+    }
+};
