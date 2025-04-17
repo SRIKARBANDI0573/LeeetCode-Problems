@@ -1,0 +1,30 @@
+class Solution {
+    public boolean isGood(int[] nums) {
+      int n = nums.length - 1; // Since base[n] is of length n + 1
+        int max = 0;
+
+        // Find the maximum value in nums
+        for (int num : nums) {
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        // If the maximum value is not equal to n, it's not base[n]
+        if (max != n) return false;
+
+        // Count the frequency of each number
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int num : nums) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+
+        // Check conditions: 1 to n - 1 should occur once, and n should occur twice
+        for (int i = 1; i < n; i++) {
+            if (freq.getOrDefault(i, 0) != 1) return false;
+        }
+
+        // n should appear exactly twice
+        return freq.getOrDefault(n, 0) == 2;
+    }
+}
