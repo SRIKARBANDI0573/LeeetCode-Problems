@@ -1,0 +1,14 @@
+ int n=nums.length;
+        
+        Set<Integer> h=new HashSet<>();
+        for(int i=0;i<n;i++){
+            h.add(nums[i]);
+        }
+        int d=0;
+        for(int i=1;i<100001;i++){
+            if(!h.contains(i)){
+                d=i;
+                break;
+            }
+        }
+        return d;
