@@ -9,7 +9,6 @@ class Solution {
                 max = num;
             }
         }
-
         // If the maximum value is not equal to n, it's not base[n]
         if (max != n) return false;
 
