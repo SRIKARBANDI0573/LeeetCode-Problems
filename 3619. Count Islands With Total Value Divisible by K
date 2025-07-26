@@ -1,0 +1,36 @@
+class Solution {
+    public int countIslands(int[][] grid, int k) {
+        int m = grid.length, n = grid[0].length;
+        boolean[][] v = new boolean[m][n];
+        int count = 0;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] > 0 && !v[i][j]) {
+                    int total = dfs(grid, v, i, j);
+                    if (total % k == 0) {
+                        count++;
+                    }
+                }
+            }
+        }
+
+        return count;
+    }
+
+    private int dfs(int[][] grid, boolean[][] v, int i, int j) {
+        int m = grid.length, n = grid[0].length;
+        if (i < 0 || i >= m || j < 0 || j >= n || v[i][j] || grid[i][j] == 0) {
+            return 0;
+        }
+
+        v[i][j] = true;
+        int s=grid[i][j];
+        s+= dfs(grid, v, i - 1, j);
+        s+= dfs(grid, v, i + 1, j);
+        s+= dfs(grid, v, i, j - 1);
+        s+= dfs(grid, v, i, j + 1);
+
+        return s;
+    }
+}
