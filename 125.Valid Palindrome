@@ -12,6 +12,5 @@ class Solution {
         
         StringBuilder b=new StringBuilder(a).reverse();
         return a.toString().equals(b.toString());
-
     }
 }
