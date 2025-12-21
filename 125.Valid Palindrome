@@ -8,8 +8,7 @@ class Solution {
             if(s.charAt(i)>=97 && s.charAt(i)<=122 || s.charAt(i)>=48 && s.charAt(i)<=57){
                 a.append(s.charAt(i));
             }
-        }
-        
+        } 
         StringBuilder b=new StringBuilder(a).reverse();
         return a.toString().equals(b.toString());
     }
