@@ -1,0 +1,16 @@
+class Solution {
+    public String reversePrefix(String s, int k) {
+        int n=s.length();
+        StringBuilder x=new StringBuilder();
+        StringBuilder y=new StringBuilder();
+        
+        for(int i=0;i<k;i++){
+             x.append(s.charAt(i));
+        }
+        for(int i=k;i<n;i++){
+            y.append(s.charAt(i));
+        }
+        x.reverse();
+        return x.toString()+y.toString();
+    }
+}
