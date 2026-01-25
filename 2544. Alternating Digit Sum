@@ -1,0 +1,27 @@
+class Solution {
+    public int alternateDigitSum(int n) {
+        List<Integer>l=new ArrayList<>();
+        int x=0;
+        int rem=0;
+        while(n>0){
+            rem=n%10;
+            n=n/10;
+            l.add(rem);
+        }
+        int len=l.size();
+        int a[]=new int[len];
+        for(int i=0;i<len;i++){
+            a[i]=l.get(len-1-i);
+        }
+        int sum=0;
+        for(int i=0;i<a.length;i++){
+            if(i%2==0){
+                sum+=a[i];
+            }
+            else{
+                sum-=a[i];
+            }
+        }
+        return sum;
+    }
+}
