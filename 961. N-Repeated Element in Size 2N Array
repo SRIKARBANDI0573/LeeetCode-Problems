@@ -1,0 +1,19 @@
+class Solution {
+    public int repeatedNTimes(int[] nums) {
+        int n=nums.length;
+
+        HashMap<Integer,Integer>hm=new HashMap<>();
+        int max=0;
+        int ans=0;
+        for(int x:nums){
+            hm.put(x,hm.getOrDefault(x,0)+1); 
+
+            if(hm.get(x)>max){
+                max=hm.get(x);
+                ans=x;
+            }
+        }
+         
+        return ans;
+    }
+}
