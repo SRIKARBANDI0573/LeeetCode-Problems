@@ -1,0 +1,21 @@
+class Solution {
+    public int numWaterBottles(int numBottles, int numExchange) {
+        int res = 0;
+        int ans = 0;
+        // if(numBottles % numExchange == 0){
+        //     ans=numBottles+numExchange+1;
+        // }
+        // else{
+        //     ans=numBottles+numExchange;
+        // }
+        // return ans;
+        while(numBottles >= numExchange){
+            res+=numExchange;
+            numBottles=numBottles-numExchange;
+
+            numBottles++;
+        }
+        ans=res+numBottles;
+        return ans;
+    }
+}
