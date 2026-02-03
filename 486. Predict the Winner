@@ -1,0 +1,27 @@
+class Solution {
+    public static int check(int nums[] ,int i ,int j){
+        if(i > j){
+            return 0;
+        }
+        if(i == j){
+            return nums[i];
+        }
+        int l = nums[i] + Math.min(check(nums,i+2,j) , check(nums ,i+1 , j-1));
+        int r = nums[j] + Math.min(check(nums ,i+1 ,j-1), check(nums ,i , j-2));
+        return Math.max(l,r);
+    } 
+    public boolean predictTheWinner(int[] nums) {
+        int n = nums.length;
+        int t=0;
+        for(int i = 0; i < n; i++){
+            t+=nums[i];
+        }
+        int sum = check(nums,0,n-1);
+        if(sum >= (t-sum)){
+            return true;
+        }
+        else{
+            return false;
+        }
+}
+}
