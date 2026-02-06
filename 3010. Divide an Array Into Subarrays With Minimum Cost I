@@ -1,0 +1,18 @@
+class Solution {
+    public int minimumCost(int[] nums) {
+        int x = 1001;
+        int y = 1001;
+        int z = nums[0];
+        for(int i = 1 ;i < nums.length; i++){
+            if(nums[i] < x){
+                y = x;
+                x = nums[i];
+            }
+            else if(nums[i] < y){
+                y = nums[i];
+            }
+        }
+        int ans  = z + x + y;
+        return ans;
+    }
+}
