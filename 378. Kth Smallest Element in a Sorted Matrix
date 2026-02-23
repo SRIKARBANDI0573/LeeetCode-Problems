@@ -1,0 +1,15 @@
+class Solution {
+    public int kthSmallest(int[][] matrix, int k) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        ArrayList<Integer> hs = new ArrayList<>();
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                hs.add(matrix[i][j]);
+            }
+        }
+        Collections.sort(hs);
+        int res = hs.get(k-1);
+        return res;
+    }
+}
