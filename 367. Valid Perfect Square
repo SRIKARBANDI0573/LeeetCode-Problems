@@ -1,0 +1,24 @@
+class Solution {
+    public boolean isPerfectSquare(int num) {
+           boolean f = false;
+         
+        long p1 = 1;
+        long p2 = num;
+        
+        while(p1 <= p2){
+             long mid = (p1 + p2) / 2;
+
+             long res = mid * mid;
+             if(res == num){
+                return true;
+             }
+             else if(res > num){
+                p2 = mid - 1;
+             }
+             else{
+                p1 = mid + 1;
+            }
+        }
+        return false;
+    }
+}
