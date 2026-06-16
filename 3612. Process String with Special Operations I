@@ -1,0 +1,23 @@
+class Solution {
+    public String processStr(String s) {
+        StringBuilder str = new StringBuilder();
+        
+        for(char c:s.toCharArray()){
+            if(c >= 'a' && c <= 'z'){
+                str.append(c);
+            }
+            else if(c == '#'){
+                str.append(str.toString());
+            }
+            else if(c == '*'){
+                if(str.length() > 0){
+                    str.deleteCharAt(str.length() - 1);
+                }
+            }
+            else{
+                str.reverse();
+            }
+        }
+        return str.toString();
+    }
+}
