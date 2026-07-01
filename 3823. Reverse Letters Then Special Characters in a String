@@ -1,0 +1,30 @@
+class Solution {
+    public String reverseByType(String s) {
+    List<Character> letters = new ArrayList<>();
+    List<Character> spec = new ArrayList<>();
+        for(char ch : s.toCharArray()){
+            if(ch >= 'a' && ch <= 'z'){
+                letters.add(ch);
+            }
+            else{
+                spec.add(ch);
+            }
+        }
+        Collections.reverse(letters);
+        Collections.reverse(spec);
+        StringBuilder res = new StringBuilder();
+        int i = 0;
+        int j = 0;
+        for(char ch : s.toCharArray()){
+            if(ch >= 'a' && ch <= 'z'){
+                res.append(letters.get(i));
+                i++;
+            }
+            else{
+                res.append(spec.get(j));
+                j++;
+            }
+        }
+    return res.toString();
+    }
+}
