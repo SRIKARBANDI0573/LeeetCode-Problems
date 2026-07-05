@@ -1,0 +1,14 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int x = 0;
+        int y = 0;
+        for(char ch :t.toCharArray()){
+            x += ch - 'a';
+        }
+        for(char ch : s.toCharArray()){
+            y += ch - 'a';
+        }
+        char res = (char)((x - y) + 'a');
+        return res;
+    }
+}
