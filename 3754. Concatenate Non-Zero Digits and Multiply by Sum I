@@ -1,0 +1,20 @@
+class Solution {
+    public long sumAndMultiply(int n) {
+    String s = Integer.toString(n);
+    int sum = 0;
+    for(char ch : s.toCharArray()){
+        sum += ch - '0';
+    }
+    StringBuilder sb = new StringBuilder();
+    for(char ch : s.toCharArray()){
+        if(ch != '0'){
+            sb.append(ch);
+        }
+    }
+    if (sb.length() == 0) {
+            return 0;
+        }
+    long num = Long.parseLong(sb.toString());
+    return sum * num;
+    }
+}
