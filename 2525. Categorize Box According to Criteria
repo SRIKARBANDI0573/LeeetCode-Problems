@@ -1,0 +1,25 @@
+class Solution {
+    public String categorizeBox(int length, int width, int height, int mass) {
+        StringBuilder sb = new StringBuilder();
+        List<String> l = new ArrayList<>();
+        Long vol = 1L * length * width * height;
+        if(vol >= 1000000000 || length >= 10000 || width >= 10000 || height >= 10000 || mass >= 10000){
+            l.add("Bulky");
+        }
+        if(mass >= 100){
+            l.add("Heavy");
+        }
+        if(l.contains("Bulky") && l.contains("Heavy")){
+            return "Both";
+        }
+        else if(!l.contains("Bulky") && !l.contains("Heavy")){
+            return "Neither";
+        }
+        else if(l.contains("Bulky")){
+            return "Bulky";
+        }
+        else{
+            return "Heavy";
+        }
+    }
+}
