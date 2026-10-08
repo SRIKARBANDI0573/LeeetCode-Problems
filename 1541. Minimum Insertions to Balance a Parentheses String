@@ -1,0 +1,29 @@
+class Solution {
+    public int minInsertions(String s) {
+        int bal = 0;
+        int ans = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if(ch == '('){
+                bal++;
+            }
+            else{
+                if(i + 1 < s.length() && s.charAt(i + 1) == ')'){
+                    i++;
+                }
+                else{
+                    ans++;
+                }
+            if(bal > 0){
+                bal--;
+            }
+            else{
+                ans++;
+            }
+        }
+        }
+        ans += 2 * bal;
+        return ans;
+    }
+}
