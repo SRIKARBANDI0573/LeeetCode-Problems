@@ -1,0 +1,11 @@
+class Solution {
+    public String[] sortPeople(String[] names, int[] heights) {
+        TreeMap<Integer,String>tm = new TreeMap(Collections.reverseOrder());
+        for(int i = 0; i < heights.length; i++){
+            tm.put(heights[i],names[i]);
+        }
+
+        return tm.values().toArray(new String[0]);
+
+    }
+}
